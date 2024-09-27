@@ -1,0 +1,1318 @@
+openapi: 3.0.0
+info:
+  title: TikTok Shop Open API
+  version: 1.0.0
+servers:
+  - url: https://{{baseurl}}
+tags:
+  - name: Auth
+  - name: Business
+  - name: Business > Product
+  - name: Business > Order
+  - name: Business > Logistics
+  - name: Business > Shop
+  - name: Business > Finance
+paths:
+  /api/token/getAccessToken:
+    post:
+      tags:
+        - Auth
+      summary: Get Your AccessToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                app_key: '{{your app_key}}'
+                app_secret: '{{your app secret}}'
+                grant_type: authorized_code
+                auth_code: '{{authorized code you obtained }}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/token/refreshToken:
+    post:
+      tags:
+        - Auth
+      summary: Refresh Your AccessToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                app_key: '{{your app_key}}'
+                app_secret: '{{your app secret}}'
+                refresh_token: '{{your refresh token}}'
+                grant_type: refresh_token
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/categories:
+    get:
+      tags:
+        - Business > Product
+      summary: Get Product Categories
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/attributes:
+    get:
+      tags:
+        - Business > Product
+      summary: Get Porudct Attributes
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: category_id
+          in: query
+          schema:
+            type: string
+          description: Only support the input of leaf categories
+          example: '{{category_id}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/categories/rules:
+    get:
+      tags:
+        - Business > Product
+      summary: Get Product Category Rules
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: category_id
+          in: query
+          schema:
+            type: string
+          description: Only support the input of leaf categories
+          example: category_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/brands:
+    get:
+      tags:
+        - Business > Product
+      summary: Get Product Brands
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: category_id
+          in: query
+          schema:
+            type: string
+          example: category_id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/upload_imgs:
+    post:
+      tags:
+        - Business > Product
+      summary: Upload Image
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                img_data: aaaaaaaaaaaaaaa
+                img_scene: 1
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/upload_files:
+    post:
+      tags:
+        - Business > Product
+      summary: Upload File
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                file_data: aaaaaaaaaaaiasdjflkasdjfklasjdfl
+                file_name: a.pdf
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products:
+    post:
+      tags:
+        - Business > Product
+      summary: Create Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_name: aaaaaa
+                description: >-
+                  <ul><li>It is recommended to avoid using Chinese because the
+                  copy will be displayed to local users</li></ul><img
+                  src="https://p19-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/8de4c52c078042589e427c681ca10d0e~tplv-o3syd03w52-origin-jpeg.jpeg?"
+                  width="1920" height="1080">
+                category_id: '111111'
+                brand_id: '2222222'
+                images:
+                  - id: fadfasdf
+                  - id: asdfasdfasdf
+                  - id: asdfasdf
+                  - id: asdfasdf
+                  - id: asdfasdf
+                warranty_period: 1
+                warranty_policy: N/A
+                package_length: 10
+                package_width: 10
+                package_height: 10
+                package_weight: '20'
+                product_certifications:
+                  - id: '1111111'
+                    files:
+                      - id: dfgsdfgsdfgsdfg
+                        name: aaaa.pdf
+                        type: PDF
+                      - id: asdfasdfasdfasdf
+                        name: bbb.pdf
+                        type: PDF
+                    images:
+                      - id: sdafasdfasdfasdfsd
+                is_cod_open: false
+                skus:
+                  - sales_attributes:
+                      - attribute_id: '11111'
+                        custom_value: yellow
+                      - attribute_id: '222222'
+                        custom_value: small
+                        sku_img:
+                          id: asdfasdfasdfasdf
+                    stock_infos:
+                      - warehouse_id: '3333333'
+                        available_stock: 200
+                    seller_sku: test1
+                    original_price: '100'
+                  - sales_attributes:
+                      - attribute_id: '100000'
+                        custom_value: red
+                      - attribute_id: '100007'
+                        custom_value: big
+                        sku_img:
+                          id: asdfasdfasdfasdfsda
+                    stock_infos:
+                      - warehouse_id: '4444444'
+                        available_stock: 0
+                    seller_sku: test2
+                    original_price: '100'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - Business > Product
+      summary: Edit Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                code: 0
+                message: Success
+                request_id: '123123123'
+                data:
+                  product_id: '123123123123'
+                  skus:
+                    - id: '123123123'
+                      seller_sku: aaaa
+                      sales_attributes:
+                        - attribute_id: '123123123123'
+                          value_id: '123123123123'
+                    - id: '123123123'
+                      seller_sku: bbbb
+                      sales_attributes:
+                        - attribute_id: '123123123'
+                          value_id: '123123123123'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - Business > Product
+      summary: Delete Products
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/search:
+    post:
+      tags:
+        - Business > Product
+      summary: Get Product List
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                page_size: 50
+                page_number: 1
+                search_status: 0
+                seller_sku_list:
+                  - aaaa
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/details:
+    get:
+      tags:
+        - Business > Product
+      summary: Get Product Detail
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: product_id
+          in: query
+          schema:
+            type: string
+          example: product id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/prices:
+    put:
+      tags:
+        - Business > Product
+      summary: Update Price
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_id: '123123123'
+                skus:
+                  - id: '123123123'
+                    original_price: '1200'
+                  - id: '12312312312'
+                    original_price: '1600'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/stocks:
+    put:
+      tags:
+        - Business > Product
+      summary: Update Stock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_id: '123123123'
+                skus:
+                  - id: '123123123'
+                    stock_infos:
+                      - available_stock: 50
+                        warehouse_id: '123123123123'
+                  - id: '123123123'
+                    stock_infos:
+                      - available_stock: 60
+                        warehouse_id: '123123123'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/inactivated_products:
+    post:
+      tags:
+        - Business > Product
+      summary: Deactivate Products
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_ids:
+                  - '123123123123'
+                  - '123123123'
+                  - '123123123'
+                  - '1231231231'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/activate:
+    post:
+      tags:
+        - Business > Product
+      summary: Activate Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_ids:
+                  - '1729385838007780943'
+                  - '1729382606675281112'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/products/recover:
+    post:
+      tags:
+        - Business > Product
+      summary: Recover Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                product_ids:
+                  - '1729385838007780943'
+                  - '1729382606675281112'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/orders/search:
+    post:
+      tags:
+        - Business > Order
+      summary: Get Order List
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                create_time_from: 1633994716
+                create_time_to: 1633994716
+                update_time_from: 1633994716
+                update_time_to: 1633994716
+                sort_type: 1
+                sort_by: CREATE_TIME
+                page_size: 50
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/orders/detail/query:
+    post:
+      tags:
+        - Business > Order
+      summary: Get Order Detail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_id_list:
+                  - '576461413038785752'
+                  - '576461413038785751'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/orders/rts:
+    post:
+      tags:
+        - Business > Order
+      summary: Ship Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_id: '576463213959808216'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/ship/get:
+    get:
+      tags:
+        - Business > Logistics
+      summary: Get Shipping Info
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: order_id
+          in: query
+          schema:
+            type: string
+          example: order id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/tracking:
+    post:
+      tags:
+        - Business > Logistics
+      summary: Update Shipping Info
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                order_id: '576463173535499480'
+                tracking_number: '576460868968549926'
+                provider_id: '6965352555291346690'
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/shipping_document:
+    get:
+      tags:
+        - Business > Logistics
+      summary: Get Shipping Document
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: order_id
+          in: query
+          schema:
+            type: string
+          example: order id
+        - name: document_type
+          in: query
+          schema:
+            type: string
+          description: >-
+            Use this field to specify the type of document to obtain. Available
+            value: SHIPPING_LABEL/ PICK_LIST/ SL_PL
+
+            SL_PL is to print both SHIPPING_LABEL and PICK_LIST in one pdf. 
+          example: document type
+        - name: document_size
+          in: query
+          schema:
+            type: string
+          description: >-
+            Use this field to specify the size of document to obtain. Available
+            value: A6/A5.  A6 by default.
+          example: document_size
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/addresses:
+    get:
+      tags:
+        - Business > Logistics
+      summary: Get Address List (deprecated)
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: address_type
+          in: query
+          schema:
+            type: string
+          description: >-
+            Use this field to specify the type of warehouse to obtain. Available
+            value: SALES_WAREHOUSE/ RETURN_WAREHOUSE/ LOCAL_RETURN_WAREHOUSE. 
+          example: address_type
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/get_warehouse_list:
+    get:
+      tags:
+        - Business > Logistics
+      summary: Get Warehouse List
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/logistics/shipping_providers:
+    get:
+      tags:
+        - Business > Logistics
+      summary: Get Shipping Provider
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/shop/get_authorized_shop:
+    get:
+      tags:
+        - Business > Shop
+      summary: Get Authorized Shop
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/finance/settlements/search:
+    post:
+      tags:
+        - Business > Finance
+      summary: Search Settlements
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                request_time_from: 1635479324
+                request_time_to: 1635663463
+                page_size: 5
+                cursor: >-
+                  aThUdHhKMXpjVnRLYkJDS3JMRm9McXlPVUxXVExYRjJiTVkwZTkzT3JJdC9HOVE9
+                sort_type: 2
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/finance/order/settlements:
+    get:
+      tags:
+        - Business > Finance
+      summary: Get Order Settlements
+      parameters:
+        - name: app_key
+          in: query
+          schema:
+            type: string
+          example: '{{your app key}}'
+        - name: access_token
+          in: query
+          schema:
+            type: string
+          example: '{{your access token}}'
+        - name: shop_id
+          in: query
+          schema:
+            type: string
+          example: '{{your shop id}}'
+        - name: sign
+          in: query
+          schema:
+            type: string
+          example: '{{sign}}'
+        - name: timestamp
+          in: query
+          schema:
+            type: string
+          example: '{{timestamp}}'
+        - name: order_id
+          in: query
+          schema:
+            type: string
+          example: order id
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

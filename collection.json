@@ -1,0 +1,1464 @@
+{
+	"info": {
+		"_postman_id": "f8951532-2b7b-412b-8bdd-0ee33f0484cd",
+		"name": "TikTok Shop Open API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1318150"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Get Your AccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"app_key\":\"{{your app_key}}\",\n    \"app_secret\":\"{{your app secret}}\",\n    \"grant_type\":\"authorized_code\",\n    \"auth_code\":\"{{authorized code you obtained }}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{Baseurl}}/api/token/getAccessToken",
+							"protocol": "https",
+							"host": [
+								"{{Baseurl}}"
+							],
+							"path": [
+								"api",
+								"token",
+								"getAccessToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Your AccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"app_key\":\"{{your app_key}}\",\n    \"app_secret\":\"{{your app secret}}\",\n    \"refresh_token\":\"{{your refresh token}}\",\n    \"grant_type\":\"refresh_token\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{BaseUrl}}/api/token/refreshToken",
+							"protocol": "https",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"token",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Business",
+			"item": [
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Get Product Categories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/categories?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"categories"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Porudct Attributes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/attributes?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&category_id={{category_id}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"attributes"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "category_id",
+											"value": "{{category_id}}",
+											"description": "Only support the input of leaf categories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Category Rules",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/categories/rules?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&category_id=category_id",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"categories",
+										"rules"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "category_id",
+											"value": "category_id",
+											"description": "Only support the input of leaf categories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Brands",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/brands?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&category_id=category_id",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"brands"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "category_id",
+											"value": "category_id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Image",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"img_data\": \"aaaaaaaaaaaaaaa\",\n    \"img_scene\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/upload_imgs?app_key={{your app key}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"upload_imgs"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"file_data\": \"aaaaaaaaaaaiasdjflkasdjfklasjdfl\",\n    \"file_name\": \"a.pdf\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/upload_files?app_key={{your app key}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"upload_files"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_name\": \"aaaaaa\",\n    \"description\": \"<ul><li>It is recommended to avoid using Chinese because the copy will be displayed to local users</li></ul><img src=\\\"https://p19-oec-va.ibyteimg.com/tos-maliva-i-o3syd03w52-us/8de4c52c078042589e427c681ca10d0e~tplv-o3syd03w52-origin-jpeg.jpeg?\\\" width=\\\"1920\\\" height=\\\"1080\\\">\",\n    \"category_id\": \"111111\",\n    \"brand_id\": \"2222222\",\n    \"images\": [\n        {\n            \"id\": \"fadfasdf\"\n        },\n        {\n            \"id\": \"asdfasdfasdf\"\n        },\n        {\n            \"id\": \"asdfasdf\"\n        },\n        {\n            \"id\": \"asdfasdf\"\n        },\n        {\n            \"id\": \"asdfasdf\"\n        }\n    ],\n    \"warranty_period\": 1,\n    \"warranty_policy\": \"N/A\",\n    \"package_length\": 10,\n    \"package_width\": 10,\n    \"package_height\": 10,\n    \"package_weight\": \"20\",\n    \"product_certifications\": [\n        {\n            \"id\": \"1111111\",\n            \"files\": [\n                {\n                    \"id\": \"dfgsdfgsdfgsdfg\",\n                    \"name\": \"aaaa.pdf\",\n                    \"type\": \"PDF\"\n                },\n                {\n                    \"id\": \"asdfasdfasdfasdf\",\n                    \"name\": \"bbb.pdf\",\n                    \"type\": \"PDF\"\n                }\n            ],\n            \"images\": [\n                {\n                    \"id\": \"sdafasdfasdfasdfsd\"\n                }\n            ]\n        }\n    ],\n    \"is_cod_open\": false,\n    \"skus\": [\n        {\n            \"sales_attributes\": [\n                {\n                    \"attribute_id\": \"11111\",\n                    \"custom_value\": \"yellow\"\n                },\n                {\n                    \"attribute_id\": \"222222\",\n                    \"custom_value\": \"small\",\n                    \"sku_img\": {\n                        \"id\": \"asdfasdfasdfasdf\"\n                    }\n                }\n            ],\n            \"stock_infos\": [\n                {\n                    \"warehouse_id\": \"3333333\",\n                    \"available_stock\": 200\n                }\n            ],\n            \"seller_sku\": \"test1\",\n            \"original_price\": \"100\"\n        },\n        {\n            \"sales_attributes\": [\n                {\n                    \"attribute_id\": \"100000\",\n                    \"custom_value\": \"red\"\n                },\n                {\n                    \"attribute_id\": \"100007\",\n                    \"custom_value\": \"big\",\n                    \"sku_img\": {\n                        \"id\": \"asdfasdfasdfasdfsda\"\n                    }\n                }\n            ],\n            \"stock_infos\": [\n                {\n                    \"warehouse_id\": \"4444444\",\n                    \"available_stock\": 0\n                }\n            ],\n            \"seller_sku\": \"test2\",\n            \"original_price\": \"100\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": 0,\n    \"message\": \"Success\",\n    \"request_id\": \"123123123\",\n    \"data\": {\n        \"product_id\": \"123123123123\",\n        \"skus\": [\n            {\n                \"id\": \"123123123\",\n                \"seller_sku\": \"aaaa\",\n                \"sales_attributes\": [\n                    {\n                        \"attribute_id\": \"123123123123\",\n                        \"value_id\": \"123123123123\"\n                    }\n                ]\n            },\n            {\n                \"id\": \"123123123\",\n                \"seller_sku\": \"bbbb\",\n                \"sales_attributes\": [\n                    {\n                        \"attribute_id\": \"123123123\",\n                        \"value_id\": \"123123123123\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product List",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"page_size\": 50,\n    \"page_number\": 1,\n    \"search_status\": 0,\n    \"seller_sku_list\": [\n        \"aaaa\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/search?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product Detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/details?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&product_id=product id",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"details"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "product_id",
+											"value": "product id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Price",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\": \"123123123\",\n    \"skus\": [\n        {\n            \"id\": \"123123123\",\n            \"original_price\": \"1200\"\n        },\n        {\n            \"id\": \"12312312312\",\n            \"original_price\": \"1600\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/prices?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"prices"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Stock",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\": \"123123123\",\n    \"skus\": [\n        {\n            \"id\": \"123123123\",\n            \"stock_infos\": [\n                {\n                    \"available_stock\": 50,\n                    \"warehouse_id\": \"123123123123\"\n                }\n            ]\n        },\n        {\n            \"id\": \"123123123\",\n            \"stock_infos\": [\n                {\n                    \"available_stock\": 60,\n                    \"warehouse_id\": \"123123123\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/stocks?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deactivate Products",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_ids\": [\n        \"123123123123\",\n        \"123123123\",\n        \"123123123\",\n        \"1231231231\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/inactivated_products?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"inactivated_products"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Products",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_ids\": [\n        \"123123123\",\n        \"123123123\",\n        \"1231231231\",\n        \"12312312123\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Activate Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"product_ids\": [\n                \"1729385838007780943\",\n                \"1729382606675281112\"\n            ]\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/activate?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"activate"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Recover Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"product_ids\": [\n                \"1729385838007780943\",\n                \"1729382606675281112\"\n            ]\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/products/recover?app_key={{your app key}}&access_token={{your access token}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"recover"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get Order List",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"create_time_from\": 1633994716,\n    \"create_time_to\": 1633994716,\n    \"update_time_from\": 1633994716,\n    \"update_time_to\": 1633994716,\n    \"sort_type\": 1,\n    \"sort_by\": \"CREATE_TIME\",\n    \"page_size\":50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/orders/search?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Detail",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"order_id_list\":[\"576461413038785752\",\"576461413038785751\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/orders/detail/query?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"detail",
+										"query"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ship Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"order_id\":\"576463213959808216\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/orders/rts?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"orders",
+										"rts"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Logistics",
+					"item": [
+						{
+							"name": "Get Shipping Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/ship/get?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&order_id=order id",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"ship",
+										"get"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "order_id",
+											"value": "order id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Shipping Info",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"order_id\": \"576463173535499480\",\n    \"tracking_number\":\"576460868968549926\",\n    \"provider_id\": \"6965352555291346690\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/tracking?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"tracking"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Shipping Document",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/shipping_document?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&order_id=order id&document_type=document type&document_size=document_size",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"shipping_document"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "order_id",
+											"value": "order id"
+										},
+										{
+											"key": "document_type",
+											"value": "document type",
+											"description": "Use this field to specify the type of document to obtain. Available value: SHIPPING_LABEL/ PICK_LIST/ SL_PL\nSL_PL is to print both SHIPPING_LABEL and PICK_LIST in one pdf. "
+										},
+										{
+											"key": "document_size",
+											"value": "document_size",
+											"description": "Use this field to specify the size of document to obtain. Available value: A6/A5.  A6 by default."
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Address List (deprecated)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/addresses?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&address_type=address_type",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"addresses"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "address_type",
+											"value": "address_type",
+											"description": "Use this field to specify the type of warehouse to obtain. Available value: SALES_WAREHOUSE/ RETURN_WAREHOUSE/ LOCAL_RETURN_WAREHOUSE. "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Warehouse List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/get_warehouse_list?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"get_warehouse_list"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Shipping Provider",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/logistics/shipping_providers?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"logistics",
+										"shipping_providers"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Shop",
+					"item": [
+						{
+							"name": "Get Authorized Shop",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{Baseurl}}/api/shop/get_authorized_shop?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"shop",
+										"get_authorized_shop"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Finance",
+					"item": [
+						{
+							"name": "Search Settlements",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"request_time_from\":1635479324,\n    \"request_time_to\":1635663463,\n    \"page_size\":5,\n    \"cursor\":\"aThUdHhKMXpjVnRLYkJDS3JMRm9McXlPVUxXVExYRjJiTVkwZTkzT3JJdC9HOVE9\",\n    \"sort_type\":2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/finance/settlements/search?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"finance",
+										"settlements",
+										"search"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Settlements",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{Baseurl}}/api/finance/order/settlements?app_key={{your app key}}&access_token={{your access token}}&shop_id={{your shop id}}&sign={{sign}}&timestamp={{timestamp}}&order_id=order id",
+									"protocol": "https",
+									"host": [
+										"{{Baseurl}}"
+									],
+									"path": [
+										"api",
+										"finance",
+										"order",
+										"settlements"
+									],
+									"query": [
+										{
+											"key": "app_key",
+											"value": "{{your app key}}"
+										},
+										{
+											"key": "access_token",
+											"value": "{{your access token}}"
+										},
+										{
+											"key": "shop_id",
+											"value": "{{your shop id}}"
+										},
+										{
+											"key": "sign",
+											"value": "{{sign}}"
+										},
+										{
+											"key": "timestamp",
+											"value": "{{timestamp}}"
+										},
+										{
+											"key": "order_id",
+											"value": "order id"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

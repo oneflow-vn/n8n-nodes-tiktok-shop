@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-tik-tok-shop-open-api",
   "version": "0.1.0",
   "description": "",
   "keywords": [
@@ -28,20 +28,18 @@
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json",
+    "p2o": "p2o ./collection.json -f ./openapi.yml",
+    "codegen": "node ../../cli.js -o . -c nodes.config.js ./openapi.yml ../templates/n8n-nodes"
   },
   "files": [
     "dist"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
-    "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
-    ],
+    "credentials": [],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/TikTokShop/TikTokShop.node"
     ]
   },
   "devDependencies": {
@@ -50,6 +48,8 @@
     "eslint-plugin-n8n-nodes-base": "^1.16.1",
     "gulp": "^4.0.2",
     "n8n-workflow": "*",
+    "postman-to-openapi": "^3.0.1",
+    "postman2openapi": "^1.2.1",
     "prettier": "^3.3.2",
     "typescript": "^5.5.3"
   },
