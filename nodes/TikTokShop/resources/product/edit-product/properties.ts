@@ -1,191 +1,178 @@
-import { INodeProperties } from 'n8n-workflow'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
+
+import { INodeProperties } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
 
 export const properties: INodeProperties[] = [
-  {
-    displayName: 'PUT /api/products',
-    name: 'operation',
-    type: 'notice',
-    typeOptions: {
-      theme: 'info',
-    },
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'App Key',
-    name: 'app_key',
-    default: '{{your app key}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          app_key: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Access Token',
-    name: 'access_token',
-    default: '{{your access token}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          access_token: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Shop Id',
-    name: 'shop_id',
-    default: '{{your shop id}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          shop_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Sign',
-    name: 'sign',
-    default: '{{sign}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          sign: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Timestamp',
-    name: 'timestamp',
-    default: '{{timestamp}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          timestamp: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Code',
-    name: 'code',
-    type: 'number',
-    default: 0,
-    routing: {
-      request: {
-        body: {
-          code: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Message',
-    name: 'message',
-    type: 'string',
-    default: '',
-    routing: {
-      request: {
-        body: {
-          message: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Request Id',
-    name: 'request_id',
-    type: 'string',
-    default: '',
-    routing: {
-      request: {
-        body: {
-          request_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-  {
-    displayName: 'Data',
-    name: 'data',
-    type: 'json',
-    default:
-      '{\n  "skus": [\n    {\n      "sales_attributes": [\n        {}\n      ]\n    }\n  ]\n}',
-    routing: {
-      request: {
-        body: {
-          data: '={{ JSON.parse($value) }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Edit Product'],
-      },
-    },
-  },
-]
+	{
+		displayName: 'Code',
+		default: 0,
+		description: undefined,
+		displayOptions: {
+			hide: {
+				'/options.useCustomBody': [true],
+			},
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'code',
+		routing: {
+			request: {
+				body: {
+					code: '={{ $value }}',
+				},
+			},
+		},
+		type: 'number',
+	},
+	{
+		displayName: 'Custom Body',
+		default:
+			'{\n  "code": 0,\n  "message": "string",\n  "request_id": "string",\n  "data": {\n    "product_id": "string",\n    "skus": [\n      {\n        "id": "string",\n        "seller_sku": "string",\n        "sales_attributes": [\n          {\n            "attribute_id": "string",\n            "value_id": "string"\n          }\n        ]\n      }\n    ]\n  }\n}',
+		description: 'Custom body to send',
+		displayOptions: {
+			show: {
+				'/options.useCustomBody': [true],
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'customBody',
+		routing: {
+			send: {
+				preSend: [helpers.hooks.preSendActionCustonBody],
+			},
+		},
+		type: 'json',
+	},
+	{
+		displayName: 'Data',
+		default:
+			'{\n  "skus": [\n    {\n      "sales_attributes": [\n        {}\n      ]\n    }\n  ]\n}',
+		description: undefined,
+		displayOptions: {
+			hide: {
+				'/options.useCustomBody': [true],
+			},
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'data',
+		routing: {
+			request: {
+				body: {
+					data: '={{ JSON.parse($value) }}',
+				},
+			},
+		},
+		type: 'json',
+	},
+	{
+		displayName: 'Message',
+		default: '',
+		description: undefined,
+		displayOptions: {
+			hide: {
+				'/options.useCustomBody': [true],
+			},
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'message',
+		routing: {
+			request: {
+				body: {
+					message: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'PUT /api/products',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'operation',
+		type: 'notice',
+		typeOptions: {
+			theme: 'info',
+		},
+	},
+	{
+		displayName: 'Request ID',
+		default: '',
+		description: undefined,
+		displayOptions: {
+			hide: {
+				'/options.useCustomBody': [true],
+			},
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'request_id',
+		routing: {
+			request: {
+				body: {
+					request_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Shop ID',
+		default: '{{your shop id}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'shop_id',
+		routing: {
+			request: {
+				qs: {
+					shop_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Timestamp',
+		default: '{{timestamp}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Edit Product'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'timestamp',
+		routing: {
+			request: {
+				qs: {
+					timestamp: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+];

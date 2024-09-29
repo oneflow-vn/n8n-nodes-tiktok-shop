@@ -1,19 +1,22 @@
 {
-  "name": "n8n-nodes-tik-tok-shop-open-api",
+  "name": "n8n-nodes-titkok-shop",
   "version": "0.1.0",
-  "description": "",
+  "description": "TikTok Shop nodes for n8n",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "n8n-nodes",
+    "n8n",
+    "titkok-shop"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://libs.oneflow.vn/packages/n8n-nodes-titkok-shop",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "@minhlucvan",
+    "email": "luk.mink@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "git@github.com:oneflow-vn/n8n-nodes-tiktok-shop.git"
   },
   "engines": {
     "node": ">=18.10",
@@ -30,7 +33,7 @@
     "lintfix": "eslint nodes credentials package.json --fix",
     "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json",
     "p2o": "p2o ./collection.json -f ./openapi.yml",
-    "codegen": "node ../../cli.js -o . -c nodes.config.js ./openapi.yml ../templates/n8n-nodes"
+    "codegen": "node ../../cli.js -o . -c nodes.config.js ./openapi.yml ../templates/n8n-nodes && pnpm lintfix && pnpm format --log-level=error"
   },
   "files": [
     "dist"
@@ -39,7 +42,7 @@
     "n8nNodesApiVersion": 1,
     "credentials": [],
     "nodes": [
-      "dist/nodes/TikTokShop/TikTokShop.node"
+      "dist/nodes/TikTokShop/TikTokShop.node.js"
     ]
   },
   "devDependencies": {

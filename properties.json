@@ -1,0 +1,4429 @@
+[
+  {
+    "displayName": "Resource",
+    "name": "resource",
+    "type": "options",
+    "noDataExpression": true,
+    "options": [
+      {
+        "name": "Product",
+        "value": "Business Product",
+        "description": ""
+      },
+      {
+        "name": "Order",
+        "value": "Business Order",
+        "description": ""
+      },
+      {
+        "name": "Logistics",
+        "value": "Business Logistics",
+        "description": ""
+      },
+      {
+        "name": "Shop",
+        "value": "Business Shop",
+        "description": ""
+      },
+      {
+        "name": "Finance",
+        "value": "Business Finance",
+        "description": ""
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Get Product Categories",
+        "value": "Get Product Categories",
+        "action": "Get Product Categories",
+        "description": "Get Product Categories",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/products/categories"
+          }
+        }
+      },
+      {
+        "name": "Get Porudct Attributes",
+        "value": "Get Porudct Attributes",
+        "action": "Get Porudct Attributes",
+        "description": "Get Porudct Attributes",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/products/attributes"
+          }
+        }
+      },
+      {
+        "name": "Get Product Category Rules",
+        "value": "Get Product Category Rules",
+        "action": "Get Product Category Rules",
+        "description": "Get Product Category Rules",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/products/categories/rules"
+          }
+        }
+      },
+      {
+        "name": "Get Product Brands",
+        "value": "Get Product Brands",
+        "action": "Get Product Brands",
+        "description": "Get Product Brands",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/products/brands"
+          }
+        }
+      },
+      {
+        "name": "Upload Image",
+        "value": "Upload Image",
+        "action": "Upload Image",
+        "description": "Upload Image",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/upload_imgs"
+          }
+        }
+      },
+      {
+        "name": "Upload File",
+        "value": "Upload File",
+        "action": "Upload File",
+        "description": "Upload File",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/upload_files"
+          }
+        }
+      },
+      {
+        "name": "Create Product",
+        "value": "Create Product",
+        "action": "Create Product",
+        "description": "Create Product",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products"
+          }
+        }
+      },
+      {
+        "name": "Edit Product",
+        "value": "Edit Product",
+        "action": "Edit Product",
+        "description": "Edit Product",
+        "routing": {
+          "request": {
+            "method": "PUT",
+            "url": "=/api/products"
+          }
+        }
+      },
+      {
+        "name": "Delete Products",
+        "value": "Delete Products",
+        "action": "Delete Products",
+        "description": "Delete Products",
+        "routing": {
+          "request": {
+            "method": "DELETE",
+            "url": "=/api/products"
+          }
+        }
+      },
+      {
+        "name": "Get Product List",
+        "value": "Get Product List",
+        "action": "Get Product List",
+        "description": "Get Product List",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/search"
+          }
+        }
+      },
+      {
+        "name": "Get Product Detail",
+        "value": "Get Product Detail",
+        "action": "Get Product Detail",
+        "description": "Get Product Detail",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/products/details"
+          }
+        }
+      },
+      {
+        "name": "Update Price",
+        "value": "Update Price",
+        "action": "Update Price",
+        "description": "Update Price",
+        "routing": {
+          "request": {
+            "method": "PUT",
+            "url": "=/api/products/prices"
+          }
+        }
+      },
+      {
+        "name": "Update Stock",
+        "value": "Update Stock",
+        "action": "Update Stock",
+        "description": "Update Stock",
+        "routing": {
+          "request": {
+            "method": "PUT",
+            "url": "=/api/products/stocks"
+          }
+        }
+      },
+      {
+        "name": "Deactivate Products",
+        "value": "Deactivate Products",
+        "action": "Deactivate Products",
+        "description": "Deactivate Products",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/inactivated_products"
+          }
+        }
+      },
+      {
+        "name": "Activate Product",
+        "value": "Activate Product",
+        "action": "Activate Product",
+        "description": "Activate Product",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/activate"
+          }
+        }
+      },
+      {
+        "name": "Recover Product",
+        "value": "Recover Product",
+        "action": "Recover Product",
+        "description": "Recover Product",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/products/recover"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Get Order List",
+        "value": "Get Order List",
+        "action": "Get Order List",
+        "description": "Get Order List",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/orders/search"
+          }
+        }
+      },
+      {
+        "name": "Get Order Detail",
+        "value": "Get Order Detail",
+        "action": "Get Order Detail",
+        "description": "Get Order Detail",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/orders/detail/query"
+          }
+        }
+      },
+      {
+        "name": "Ship Order",
+        "value": "Ship Order",
+        "action": "Ship Order",
+        "description": "Ship Order",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/orders/rts"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Get Shipping Info",
+        "value": "Get Shipping Info",
+        "action": "Get Shipping Info",
+        "description": "Get Shipping Info",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/logistics/ship/get"
+          }
+        }
+      },
+      {
+        "name": "Update Shipping Info",
+        "value": "Update Shipping Info",
+        "action": "Update Shipping Info",
+        "description": "Update Shipping Info",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/logistics/tracking"
+          }
+        }
+      },
+      {
+        "name": "Get Shipping Document",
+        "value": "Get Shipping Document",
+        "action": "Get Shipping Document",
+        "description": "Get Shipping Document",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/logistics/shipping_document"
+          }
+        }
+      },
+      {
+        "name": "Get Address List Deprecated",
+        "value": "Get Address List Deprecated",
+        "action": "Get Address List (deprecated)",
+        "description": "Get Address List (deprecated)",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/logistics/addresses"
+          }
+        }
+      },
+      {
+        "name": "Get Warehouse List",
+        "value": "Get Warehouse List",
+        "action": "Get Warehouse List",
+        "description": "Get Warehouse List",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/logistics/get_warehouse_list"
+          }
+        }
+      },
+      {
+        "name": "Get Shipping Provider",
+        "value": "Get Shipping Provider",
+        "action": "Get Shipping Provider",
+        "description": "Get Shipping Provider",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/logistics/shipping_providers"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Shop"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Get Authorized Shop",
+        "value": "Get Authorized Shop",
+        "action": "Get Authorized Shop",
+        "description": "Get Authorized Shop",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/shop/get_authorized_shop"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "Operation",
+    "name": "operation",
+    "type": "options",
+    "noDataExpression": true,
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ]
+      }
+    },
+    "options": [
+      {
+        "name": "Search Settlements",
+        "value": "Search Settlements",
+        "action": "Search Settlements",
+        "description": "Search Settlements",
+        "routing": {
+          "request": {
+            "method": "POST",
+            "url": "=/api/finance/settlements/search"
+          }
+        }
+      },
+      {
+        "name": "Get Order Settlements",
+        "value": "Get Order Settlements",
+        "action": "Get Order Settlements",
+        "description": "Get Order Settlements",
+        "routing": {
+          "request": {
+            "method": "GET",
+            "url": "=/api/finance/order/settlements"
+          }
+        }
+      }
+    ],
+    "default": ""
+  },
+  {
+    "displayName": "GET /api/products/categories",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Categories"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Categories"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Categories"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/products/attributes",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Porudct Attributes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Porudct Attributes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Porudct Attributes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Category Id",
+    "name": "category_id",
+    "description": "Only support the input of leaf categories",
+    "default": "{{category_id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "category_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Porudct Attributes"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/products/categories/rules",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Category Rules"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Category Rules"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Category Rules"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Category Id",
+    "name": "category_id",
+    "description": "Only support the input of leaf categories",
+    "default": "category_id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "category_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Category Rules"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/products/brands",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Brands"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Brands"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Brands"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Category Id",
+    "name": "category_id",
+    "default": "category_id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "category_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Brands"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/upload_imgs",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload Image"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload Image"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Img Data",
+    "name": "img_data",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "img_data": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload Image"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Img Scene",
+    "name": "img_scene",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "img_scene": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload Image"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"img_data\": \"string\",\n  \"img_scene\": 0\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload Image"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/upload_files",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload File"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload File"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "File Data",
+    "name": "file_data",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "file_data": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload File"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "File Name",
+    "name": "file_name",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "file_name": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload File"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"file_data\": \"string\",\n  \"file_name\": \"string\"\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Upload File"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Name",
+    "name": "product_name",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "product_name": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Description",
+    "name": "description",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "description": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Category Id",
+    "name": "category_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "category_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Brand Id",
+    "name": "brand_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "brand_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Images",
+    "name": "images",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "id",
+            "displayName": "id"
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "images": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Warranty Period",
+    "name": "warranty_period",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "warranty_period": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Warranty Policy",
+    "name": "warranty_policy",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "warranty_policy": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Package Length",
+    "name": "package_length",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "package_length": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Package Width",
+    "name": "package_width",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "package_width": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Package Height",
+    "name": "package_height",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "package_height": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Package Weight",
+    "name": "package_weight",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "package_weight": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Certifications",
+    "name": "product_certifications",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "type": "json",
+            "default": "{\n  \"files\": [\n    {}\n  ],\n  \"images\": [\n    {}\n  ]\n}",
+            "displayName": "Item",
+            "name": "item"
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "product_certifications": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Is Cod Open",
+    "name": "is_cod_open",
+    "type": "boolean",
+    "default": true,
+    "routing": {
+      "request": {
+        "body": {
+          "is_cod_open": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Skus",
+    "name": "skus",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "type": "json",
+            "default": "{\n  \"sales_attributes\": [\n    null\n  ],\n  \"stock_infos\": [\n    {}\n  ]\n}",
+            "displayName": "Item",
+            "name": "item"
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "skus": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_name\": \"string\",\n  \"description\": \"string\",\n  \"category_id\": \"string\",\n  \"brand_id\": \"string\",\n  \"images\": [\n    {\n      \"id\": \"string\"\n    }\n  ],\n  \"warranty_period\": 0,\n  \"warranty_policy\": \"string\",\n  \"package_length\": 0,\n  \"package_width\": 0,\n  \"package_height\": 0,\n  \"package_weight\": \"string\",\n  \"product_certifications\": [\n    {\n      \"id\": \"string\",\n      \"files\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\"\n        }\n      ],\n      \"images\": [\n        {\n          \"id\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"is_cod_open\": true,\n  \"skus\": [\n    {\n      \"sales_attributes\": [\n        {}\n      ],\n      \"stock_infos\": [\n        {\n          \"warehouse_id\": \"string\",\n          \"available_stock\": 0\n        }\n      ],\n      \"seller_sku\": \"string\",\n      \"original_price\": \"string\"\n    }\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Create Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "PUT /api/products",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Code",
+    "name": "code",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "code": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Message",
+    "name": "message",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "message": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Request Id",
+    "name": "request_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "request_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Data",
+    "name": "data",
+    "type": "json",
+    "default": "{\n  \"skus\": [\n    {\n      \"sales_attributes\": [\n        {}\n      ]\n    }\n  ]\n}",
+    "routing": {
+      "request": {
+        "body": {
+          "data": "={{ JSON.parse($value) }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"code\": 0,\n  \"message\": \"string\",\n  \"request_id\": \"string\",\n  \"data\": {\n    \"product_id\": \"string\",\n    \"skus\": [\n      {\n        \"id\": \"string\",\n        \"seller_sku\": \"string\",\n        \"sales_attributes\": [\n          {\n            \"attribute_id\": \"string\",\n            \"value_id\": \"string\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Edit Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "DELETE /api/products",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Delete Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Delete Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Delete Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/search",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Page Size",
+    "name": "page_size",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "page_size": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Page Number",
+    "name": "page_number",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "page_number": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Search Status",
+    "name": "search_status",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "search_status": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Seller Sku List",
+    "name": "seller_sku_list",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "name": "Item",
+            "displayName": "Item",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "seller_sku_list": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"page_size\": 0,\n  \"page_number\": 0,\n  \"search_status\": 0,\n  \"seller_sku_list\": [\n    \"string\"\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/products/details",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "product_id",
+    "default": "product id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "product_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Get Product Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "PUT /api/products/prices",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "product_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "product_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Skus",
+    "name": "skus",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "type": "string",
+            "default": "",
+            "name": "id",
+            "displayName": "id"
+          },
+          {
+            "type": "string",
+            "default": "",
+            "name": "original_price",
+            "displayName": "original_price"
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "skus": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_id\": \"string\",\n  \"skus\": [\n    {\n      \"id\": \"string\",\n      \"original_price\": \"string\"\n    }\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Price"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "PUT /api/products/stocks",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Id",
+    "name": "product_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "product_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Skus",
+    "name": "skus",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "type": "json",
+            "default": "{\n  \"stock_infos\": [\n    {}\n  ]\n}",
+            "displayName": "Item",
+            "name": "item"
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "skus": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_id\": \"string\",\n  \"skus\": [\n    {\n      \"id\": \"string\",\n      \"stock_infos\": [\n        {\n          \"available_stock\": 0,\n          \"warehouse_id\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Update Stock"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/inactivated_products",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Deactivate Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Deactivate Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Deactivate Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Ids",
+    "name": "product_ids",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "name": "Item",
+            "displayName": "Item",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "product_ids": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Deactivate Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_ids\": [\n    \"string\"\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Deactivate Products"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/activate",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Activate Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Activate Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Activate Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Ids",
+    "name": "product_ids",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "name": "Item",
+            "displayName": "Item",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "product_ids": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Activate Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_ids\": [\n    \"string\"\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Activate Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/products/recover",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Recover Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Recover Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Product Ids",
+    "name": "product_ids",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "name": "Item",
+            "displayName": "Item",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "product_ids": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Recover Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"product_ids\": [\n    \"string\"\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Product"
+        ],
+        "operation": [
+          "Recover Product"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/orders/search",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Create Time From",
+    "name": "create_time_from",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "create_time_from": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Create Time To",
+    "name": "create_time_to",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "create_time_to": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Update Time From",
+    "name": "update_time_from",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "update_time_from": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Update Time To",
+    "name": "update_time_to",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "update_time_to": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Sort Type",
+    "name": "sort_type",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "sort_type": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Sort By",
+    "name": "sort_by",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "sort_by": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Page Size",
+    "name": "page_size",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "page_size": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"create_time_from\": 0,\n  \"create_time_to\": 0,\n  \"update_time_from\": 0,\n  \"update_time_to\": 0,\n  \"sort_type\": 0,\n  \"sort_by\": \"string\",\n  \"page_size\": 0\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/orders/detail/query",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id List",
+    "name": "order_id_list",
+    "type": "fixedCollection",
+    "default": [],
+    "typeOptions": {
+      "multipleValues": true
+    },
+    "placeholder": "Add item",
+    "options": [
+      {
+        "name": "items",
+        "displayName": "Items",
+        "values": [
+          {
+            "name": "Item",
+            "displayName": "Item",
+            "type": "string",
+            "default": ""
+          }
+        ]
+      }
+    ],
+    "routing": {
+      "request": {
+        "body": {
+          "order_id_list": "={{$value.items}}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"order_id_list\": [\n    \"string\"\n  ]\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Get Order Detail"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/orders/rts",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Ship Order"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Ship Order"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Ship Order"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id",
+    "name": "order_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "order_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Ship Order"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"order_id\": \"string\"\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Order"
+        ],
+        "operation": [
+          "Ship Order"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/logistics/ship/get",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id",
+    "name": "order_id",
+    "default": "order id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "order_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/logistics/tracking",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id",
+    "name": "order_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "order_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Tracking Number",
+    "name": "tracking_number",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "tracking_number": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Provider Id",
+    "name": "provider_id",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "provider_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"order_id\": \"string\",\n  \"tracking_number\": \"string\",\n  \"provider_id\": \"string\"\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Update Shipping Info"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/logistics/shipping_document",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id",
+    "name": "order_id",
+    "default": "order id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "order_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Document Type",
+    "name": "document_type",
+    "description": "Use this field to specify the type of document to obtain. Available value: SHIPPING_LABEL/ PICK_LIST/ SL_PL\nSL_PL is to print both SHIPPING_LABEL and PICK_LIST in one pdf. ",
+    "default": "document type",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "document_type": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Document Size",
+    "name": "document_size",
+    "description": "Use this field to specify the size of document to obtain. Available value: A6/A5.  A6 by default.",
+    "default": "document_size",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "document_size": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Document"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/logistics/addresses",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Address List Deprecated"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Address List Deprecated"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Address List Deprecated"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Address Type",
+    "name": "address_type",
+    "description": "Use this field to specify the type of warehouse to obtain. Available value: SALES_WAREHOUSE/ RETURN_WAREHOUSE/ LOCAL_RETURN_WAREHOUSE. ",
+    "default": "address_type",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "address_type": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Address List Deprecated"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/logistics/get_warehouse_list",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Warehouse List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Warehouse List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Warehouse List"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/logistics/shipping_providers",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Provider"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Provider"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Logistics"
+        ],
+        "operation": [
+          "Get Shipping Provider"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/shop/get_authorized_shop",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Shop"
+        ],
+        "operation": [
+          "Get Authorized Shop"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Shop"
+        ],
+        "operation": [
+          "Get Authorized Shop"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Shop"
+        ],
+        "operation": [
+          "Get Authorized Shop"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "POST /api/finance/settlements/search",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Request Time From",
+    "name": "request_time_from",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "request_time_from": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Request Time To",
+    "name": "request_time_to",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "request_time_to": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Page Size",
+    "name": "page_size",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "page_size": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Cursor",
+    "name": "cursor",
+    "type": "string",
+    "default": "",
+    "routing": {
+      "request": {
+        "body": {
+          "cursor": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Sort Type",
+    "name": "sort_type",
+    "type": "number",
+    "default": 0,
+    "routing": {
+      "request": {
+        "body": {
+          "sort_type": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "hide": {
+        "/options.useCustomBody": [
+          true
+        ]
+      },
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Custom Body",
+    "name": "customBody",
+    "type": "json",
+    "default": "{\n  \"request_time_from\": 0,\n  \"request_time_to\": 0,\n  \"page_size\": 0,\n  \"cursor\": \"string\",\n  \"sort_type\": 0\n}",
+    "description": "Custom body to send.",
+    "routing": {
+      "send": {
+        "preSend": [
+          "${helpers.hooks.preSendActionCustonBody}"
+        ]
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "/options.useCustomBody": [
+          true
+        ],
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Search Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "GET /api/finance/order/settlements",
+    "name": "operation",
+    "type": "notice",
+    "typeOptions": {
+      "theme": "info"
+    },
+    "default": "",
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Get Order Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Shop Id",
+    "name": "shop_id",
+    "default": "{{your shop id}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "shop_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Get Order Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Timestamp",
+    "name": "timestamp",
+    "default": "{{timestamp}}",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "timestamp": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Get Order Settlements"
+        ]
+      }
+    }
+  },
+  {
+    "displayName": "Order Id",
+    "name": "order_id",
+    "default": "order id",
+    "type": "string",
+    "routing": {
+      "request": {
+        "qs": {
+          "order_id": "={{ $value }}"
+        }
+      }
+    },
+    "displayOptions": {
+      "show": {
+        "resource": [
+          "Business Finance"
+        ],
+        "operation": [
+          "Get Order Settlements"
+        ]
+      }
+    }
+  }
+]

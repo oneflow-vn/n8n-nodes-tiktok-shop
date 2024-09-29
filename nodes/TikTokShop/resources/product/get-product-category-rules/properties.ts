@@ -1,133 +1,85 @@
-import { INodeProperties } from 'n8n-workflow'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
+
+import { INodeProperties } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
 
 export const properties: INodeProperties[] = [
-  {
-    displayName: 'GET /api/products/categories/rules',
-    name: 'operation',
-    type: 'notice',
-    typeOptions: {
-      theme: 'info',
-    },
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'App Key',
-    name: 'app_key',
-    default: '{{your app key}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          app_key: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'Access Token',
-    name: 'access_token',
-    default: '{{your access token}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          access_token: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'Shop Id',
-    name: 'shop_id',
-    default: '{{your shop id}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          shop_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'Sign',
-    name: 'sign',
-    default: '{{sign}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          sign: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'Timestamp',
-    name: 'timestamp',
-    default: '{{timestamp}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          timestamp: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-  {
-    displayName: 'Category Id',
-    name: 'category_id',
-    default: 'category_id',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          category_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Category Rules'],
-      },
-    },
-  },
-]
+	{
+		displayName: 'Category ID',
+		default: 'category_id',
+		description: 'Only support the input of leaf categories',
+		displayOptions: {
+			show: {
+				operation: ['Get Product Category Rules'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'category_id',
+		routing: {
+			request: {
+				qs: {
+					category_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'GET /api/products/categories/rules',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: ['Get Product Category Rules'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'operation',
+		type: 'notice',
+		typeOptions: {
+			theme: 'info',
+		},
+	},
+	{
+		displayName: 'Shop ID',
+		default: '{{your shop id}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Product Category Rules'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'shop_id',
+		routing: {
+			request: {
+				qs: {
+					shop_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Timestamp',
+		default: '{{timestamp}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Product Category Rules'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'timestamp',
+		routing: {
+			request: {
+				qs: {
+					timestamp: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+];

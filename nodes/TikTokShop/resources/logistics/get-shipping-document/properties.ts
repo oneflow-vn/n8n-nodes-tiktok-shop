@@ -1,171 +1,127 @@
-import { INodeProperties } from 'n8n-workflow'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
+
+import { INodeProperties } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
 
 export const properties: INodeProperties[] = [
-  {
-    displayName: 'GET /api/logistics/shipping_document',
-    name: 'operation',
-    type: 'notice',
-    typeOptions: {
-      theme: 'info',
-    },
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'App Key',
-    name: 'app_key',
-    default: '{{your app key}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          app_key: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Access Token',
-    name: 'access_token',
-    default: '{{your access token}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          access_token: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Shop Id',
-    name: 'shop_id',
-    default: '{{your shop id}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          shop_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Sign',
-    name: 'sign',
-    default: '{{sign}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          sign: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Timestamp',
-    name: 'timestamp',
-    default: '{{timestamp}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          timestamp: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Order Id',
-    name: 'order_id',
-    default: 'order id',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          order_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Document Type',
-    name: 'document_type',
-    default: 'document type',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          document_type: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-  {
-    displayName: 'Document Size',
-    name: 'document_size',
-    default: 'document_size',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          document_size: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Shipping Document'],
-      },
-    },
-  },
-]
+	{
+		displayName: 'Document Size',
+		default: 'document_size',
+		description:
+			'Use this field to specify the size of document to obtain. Available value: A6/A5. A6 by default.',
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'document_size',
+		routing: {
+			request: {
+				qs: {
+					document_size: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Document Type',
+		default: 'document type',
+		description: `Use this field to specify the type of document to obtain. Available value: SHIPPING_LABEL/ PICK_LIST/ SL_PL
+SL_PL is to print both SHIPPING_LABEL and PICK_LIST in one pdf.`,
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'document_type',
+		routing: {
+			request: {
+				qs: {
+					document_type: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'GET /api/logistics/shipping_document',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'operation',
+		type: 'notice',
+		typeOptions: {
+			theme: 'info',
+		},
+	},
+	{
+		displayName: 'Order ID',
+		default: 'order id',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'order_id',
+		routing: {
+			request: {
+				qs: {
+					order_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Shop ID',
+		default: '{{your shop id}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'shop_id',
+		routing: {
+			request: {
+				qs: {
+					shop_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Timestamp',
+		default: '{{timestamp}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Shipping Document'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'timestamp',
+		routing: {
+			request: {
+				qs: {
+					timestamp: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+];

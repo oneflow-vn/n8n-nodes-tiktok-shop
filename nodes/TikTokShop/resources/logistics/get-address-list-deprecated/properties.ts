@@ -1,133 +1,86 @@
-import { INodeProperties } from 'n8n-workflow'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
+
+import { INodeProperties } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
 
 export const properties: INodeProperties[] = [
-  {
-    displayName: 'GET /api/logistics/addresses',
-    name: 'operation',
-    type: 'notice',
-    typeOptions: {
-      theme: 'info',
-    },
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'App Key',
-    name: 'app_key',
-    default: '{{your app key}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          app_key: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'Access Token',
-    name: 'access_token',
-    default: '{{your access token}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          access_token: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'Shop Id',
-    name: 'shop_id',
-    default: '{{your shop id}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          shop_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'Sign',
-    name: 'sign',
-    default: '{{sign}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          sign: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'Timestamp',
-    name: 'timestamp',
-    default: '{{timestamp}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          timestamp: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-  {
-    displayName: 'Address Type',
-    name: 'address_type',
-    default: 'address_type',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          address_type: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Logistics'],
-        operation: ['Get Address List deprecated'],
-      },
-    },
-  },
-]
+	{
+		displayName: 'Address Type',
+		default: 'address_type',
+		description:
+			'Use this field to specify the type of warehouse to obtain. Available value: SALES_WAREHOUSE/ RETURN_WAREHOUSE/ LOCAL_RETURN_WAREHOUSE.',
+		displayOptions: {
+			show: {
+				operation: ['Get Address List Deprecated'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'address_type',
+		routing: {
+			request: {
+				qs: {
+					address_type: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'GET /api/logistics/addresses',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: ['Get Address List Deprecated'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'operation',
+		type: 'notice',
+		typeOptions: {
+			theme: 'info',
+		},
+	},
+	{
+		displayName: 'Shop ID',
+		default: '{{your shop id}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Address List Deprecated'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'shop_id',
+		routing: {
+			request: {
+				qs: {
+					shop_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Timestamp',
+		default: '{{timestamp}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Address List Deprecated'],
+				resource: ['Business Logistics'],
+			},
+		},
+		name: 'timestamp',
+		routing: {
+			request: {
+				qs: {
+					timestamp: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+];

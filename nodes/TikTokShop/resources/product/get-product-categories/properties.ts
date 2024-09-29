@@ -1,114 +1,65 @@
-import { INodeProperties } from 'n8n-workflow'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
+
+import { INodeProperties } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
 
 export const properties: INodeProperties[] = [
-  {
-    displayName: 'GET /api/products/categories',
-    name: 'operation',
-    type: 'notice',
-    typeOptions: {
-      theme: 'info',
-    },
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-  {
-    displayName: 'App Key',
-    name: 'app_key',
-    default: '{{your app key}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          app_key: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-  {
-    displayName: 'Access Token',
-    name: 'access_token',
-    default: '{{your access token}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          access_token: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-  {
-    displayName: 'Shop Id',
-    name: 'shop_id',
-    default: '{{your shop id}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          shop_id: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-  {
-    displayName: 'Sign',
-    name: 'sign',
-    default: '{{sign}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          sign: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-  {
-    displayName: 'Timestamp',
-    name: 'timestamp',
-    default: '{{timestamp}}',
-    type: 'string',
-    routing: {
-      request: {
-        qs: {
-          timestamp: '={{ $value }}',
-        },
-      },
-    },
-    displayOptions: {
-      show: {
-        resource: ['Business Product'],
-        operation: ['Get Product Categories'],
-      },
-    },
-  },
-]
+	{
+		displayName: 'GET /api/products/categories',
+		default: '',
+		displayOptions: {
+			show: {
+				operation: ['Get Product Categories'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'operation',
+		type: 'notice',
+		typeOptions: {
+			theme: 'info',
+		},
+	},
+	{
+		displayName: 'Shop ID',
+		default: '{{your shop id}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Product Categories'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'shop_id',
+		routing: {
+			request: {
+				qs: {
+					shop_id: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+	{
+		displayName: 'Timestamp',
+		default: '{{timestamp}}',
+		description: undefined,
+		displayOptions: {
+			show: {
+				operation: ['Get Product Categories'],
+				resource: ['Business Product'],
+			},
+		},
+		name: 'timestamp',
+		routing: {
+			request: {
+				qs: {
+					timestamp: '={{ $value }}',
+				},
+			},
+		},
+		type: 'string',
+	},
+];

@@ -1,21 +1,29 @@
-import { INodePropertyOptions } from 'n8n-workflow'
-import { properties as rawProperties } from './properties'
-import runHooks from './hooks'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
 
-export const name = 'Get Address List deprecated'
+import { INodePropertyOptions } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
+
+import { properties as rawProperties } from './properties';
+import runHooks from './hooks';
+
+export const name = 'Get Address List Deprecated';
 
 const rawOption: INodePropertyOptions = {
-  name: 'Get Address List deprecated',
-  value: 'Get Address List deprecated',
-  action: 'Get Address List (deprecated)',
-  routing: {
-    request: {
-      method: 'GET',
-      url: '=/api/logistics/addresses',
-    },
-  },
-}
+	action: 'Get Address List (deprecated)',
+	description: 'Get Address List (deprecated)',
+	name: 'Get Address List Deprecated',
+	routing: {
+		request: {
+			method: 'GET',
+			url: '=/api/logistics/addresses',
+		},
+	},
+	value: 'Get Address List Deprecated',
+};
 
-const { properties, option } = runHooks(rawOption, rawProperties)
+const { properties, option } = runHooks(rawOption, rawProperties);
 
-export { option, properties }
+export { option, properties };

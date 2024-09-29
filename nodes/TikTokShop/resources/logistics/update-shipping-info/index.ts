@@ -1,21 +1,29 @@
-import { INodePropertyOptions } from 'n8n-workflow'
-import { properties as rawProperties } from './properties'
-import runHooks from './hooks'
+/* eslint-disable n8n-nodes-base/node-param-option-description-identical-to-name */
+// eslint-disable n8n-nodes-base/node-param-display-name-miscased-id
 
-export const name = 'Update Shipping Info'
+import { INodePropertyOptions } from 'n8n-workflow';
+
+// @ts-ignore
+import * as helpers from '../../../helpers';
+
+import { properties as rawProperties } from './properties';
+import runHooks from './hooks';
+
+export const name = 'Update Shipping Info';
 
 const rawOption: INodePropertyOptions = {
-  name: 'Update Shipping Info',
-  value: 'Update Shipping Info',
-  action: 'Update Shipping Info',
-  routing: {
-    request: {
-      method: 'POST',
-      url: '=/api/logistics/tracking',
-    },
-  },
-}
+	action: 'Update Shipping Info',
+	description: 'Update Shipping Info',
+	name: 'Update Shipping Info',
+	routing: {
+		request: {
+			method: 'POST',
+			url: '=/api/logistics/tracking',
+		},
+	},
+	value: 'Update Shipping Info',
+};
 
-const { properties, option } = runHooks(rawOption, rawProperties)
+const { properties, option } = runHooks(rawOption, rawProperties);
 
-export { option, properties }
+export { option, properties };

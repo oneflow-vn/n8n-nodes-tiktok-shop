@@ -3,9 +3,8 @@ const path = require('path');
 const credentials = [];
 
 module.exports = {
-	packageName: 'n8n-nodes-larksuite',
-	credentials: {
-	},
+	packageName: 'n8n-nodes-titkok-shop',
+	credentials: {},
 	nodes: {
 		tiktokShop: {
 			displayName: 'TikTok Shop',
@@ -16,6 +15,28 @@ module.exports = {
 			icon: './icons/tiktokshop.svg',
 			baseUrl: 'https://open-api.tiktokglobalshop.com',
 			credentials,
-		}
-	}
+		},
+	},
+	overwrites: {
+		operations: [
+			{
+				match: {
+					name: 'access_token',
+				},
+				set: false,
+			},
+			{
+				match: {
+					name: 'app_key',
+				},
+				set: false,
+			},
+			{
+				match: {
+					name: 'sign',
+				},
+				set: false,
+			}
+		],
+	},
 };
